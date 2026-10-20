@@ -130,7 +130,7 @@ export default function AboutPage() {
               <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-gray-900 p-2 group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/15 pointer-events-none z-10 rounded-2xl"></div>
                 <img
-                  src="/images/CEO.png"
+                  src="/images/CEO.jpg"
                   alt="Faisal Qadir - CEO, 110 Baby Feeder"
                   className="w-full h-full object-cover object-top rounded-2xl group-hover:scale-105 transition-transform duration-500"
                 />
