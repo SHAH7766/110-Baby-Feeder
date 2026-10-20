@@ -376,6 +376,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ SECTION */}
+      <section className="w-full py-16 lg:py-24 bg-surface-container-low dark:bg-[#182232] transition-colors duration-300">
+        <div className="max-w-[1000px] mx-auto px-margin-mobile md:px-margin">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="font-eyebrow text-eyebrow text-primary dark:text-primary-fixed uppercase tracking-widest font-bold">Got Questions?</span>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface dark:text-white font-bold mt-2">
+              Frequently Asked Questions
+            </h2>
+            <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-gray-300 mt-3">
+              Everything you need to know about our baby feeders, safety standards, and delivery across Pakistan.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Are 110 Baby Feeders 100% BPA and toxin-free?",
+                a: "Yes! All our feeders are crafted from medical-grade silicone and thermal-shock resistant borosilicate glass, completely free from BPA, BPS, phthalates, and harmful toxins."
+              },
+              {
+                q: "How does the anti-colic dual vent system work?",
+                a: "Our advanced anti-colic airflow valve equalizes pressure inside the bottle, allowing milk to flow smoothly while preventing your baby from swallowing air, significantly reducing colic, gas, and spit-ups."
+              },
+              {
+                q: "What is the delivery time across Pakistan?",
+                a: "We offer fast nationwide delivery across Pakistan within 2 to 4 business days. Orders above Rs. 3,000 qualify for free delivery!"
+              },
+              {
+                q: "Can the glass feeders and silicone sleeves be sterilized?",
+                a: "Absolutely. Our borosilicate glass withstands high thermal temperatures, and both the glass bottles and silicone parts can be safely boiled, steam-sterilized, or washed in the dishwasher."
+              }
+            ].map((faq, idx) => (
+              <details key={idx} className="group bg-surface-container-lowest dark:bg-[#1F2937] p-6 rounded-2xl shadow-sm border border-outline-variant/15 dark:border-gray-800 transition-all">
+                <summary className="flex items-center justify-between font-headline-sm text-lg font-bold text-on-surface dark:text-white cursor-pointer list-none">
+                  <span>{faq.q}</span>
+                  <span className="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <p className="font-body-md text-on-surface-variant dark:text-gray-300 mt-3 leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* HEADQUARTERS / LOCATION SECTION */}
       <section className="w-full py-16 lg:py-24 bg-surface dark:bg-[#111827] transition-colors duration-300">
         <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">

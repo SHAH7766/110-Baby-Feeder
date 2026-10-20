@@ -119,28 +119,59 @@ export default function CartDrawer() {
               {/* Footer Subtotal & Checkout */}
               {cart.length > 0 && (
                 <div className="p-6 border-t border-surface-container dark:border-gray-800 bg-surface dark:bg-[#111827] space-y-4">
+                  {/* Free Delivery Progress Bar */}
+                  <div className="space-y-1.5 bg-surface-container-low dark:bg-gray-800 p-3.5 rounded-2xl border border-outline-variant/15">
+                    <div className="flex justify-between items-center text-xs font-bold text-on-surface dark:text-white">
+                      <span>
+                        {subtotal >= 3000 ? '🎉 You unlocked Free Delivery!' : `Add Rs. ${(3000 - subtotal).toLocaleString()} more for Free Delivery`}
+                      </span>
+                      <span>{Math.min(100, Math.round((subtotal / 3000) * 100))}%</span>
+                    </div>
+                    <div className="w-full h-2 bg-surface-container-highest dark:bg-gray-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-primary rounded-full transition-all duration-500"
+                        style={{ width: `${Math.min(100, (subtotal / 3000) * 100)}%` }}
+                      ></div>
+                    </div>
+                  </div>
+
                   <div className="flex items-center justify-between">
                     <span className="font-body-md text-on-surface-variant dark:text-gray-300">Subtotal</span>
                     <span className="font-price-display text-xl font-bold text-primary">Rs. {subtotal.toLocaleString()}</span>
                   </div>
-                  <p className="font-body-sm text-[12px] text-on-surface-variant dark:text-gray-400">Shipping and taxes calculated at checkout. Frontend demo mode.</p>
-                  <button
-                    onClick={handleCheckout}
-                    disabled={checkedOut}
-                    className="w-full h-14 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-[16px] font-bold tracking-wide shadow-lg transition-all flex items-center justify-center gap-2"
-                  >
-                    {checkedOut ? (
-                      <>
-                        <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                        Processing Order...
-                      </>
-                    ) : (
-                      <>
-                        <span>Proceed to Secure Checkout</span>
-                        <span className="material-symbols-outlined">arrow_forward</span>
-                      </>
-                    )}
-                  </button>
+
+                  {/* Actions */}
+                  <div className="space-y-2.5 pt-1">
+                    <button
+                      onClick={handleCheckout}
+                      disabled={checkedOut}
+                      className="w-full h-13 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-[15px] font-bold tracking-wide shadow-lg transition-all flex items-center justify-center gap-2"
+                    >
+                      {checkedOut ? (
+                        <>
+                          <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                          Processing Order...
+                        </>
+                      ) : (
+                        <>
+                          <span>Proceed to Secure Checkout</span>
+                          <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </>
+                      )}
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        const itemsList = cart.map(i => `- ${i.name} (x${i.quantity}) - Rs. ${(i.price * i.quantity).toLocaleString()}`).join('%0A');
+                        const message = `Hello 110 Baby Feeder, I would like to place an order:%0A%0A${itemsList}%0A%0ASubtotal: Rs. ${subtotal.toLocaleString()}%0A%0APlease confirm my order and dispatch details.`;
+                        window.open(`https://wa.me/923205475430?text=${message}`, '_blank');
+                      }}
+                      className="w-full h-13 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md text-[15px] font-bold tracking-wide shadow-md transition-all flex items-center justify-center gap-2"
+                    >
+                      <span className="material-symbols-outlined text-[20px]">chat</span>
+                      <span>Order via WhatsApp (+92 320 5475430)</span>
+                    </button>
+                  </div>
                 </div>
               )}
             </motion.div>
