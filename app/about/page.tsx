@@ -82,7 +82,7 @@ export default function AboutPage() {
             >
               <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] p-2">
                 <img
-                  src="https://res.cloudinary.com/hvql2xsc/image/upload/v1792497907/110_baby_feeder/Baby_holdng.jpg"
+                  src="https://res.cloudinary.com/hvql2xsc/image/upload/v1792510089/Baby_holdng-can-you-replace-the-feeder-that-baby-is-holding-in.jpg"
                   alt="110 Baby Feeder Product Care"
                   className="w-full h-full object-cover rounded-[24px]"
                 />

@@ -10,46 +10,50 @@ const featuredProducts = [
   {
     id: 'p1',
     name: '110 Classic Baby Feeder',
-    price: 2850,
-    priceFormatted: 'Rs. 2,850',
+    price: 0,
+    priceFormatted: '',
     description: 'Ergonomic borosilicate glass with soft peach silicone sleeve and anti-colic dual vent.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497909/110_baby_feeder/feeder_1%20%281%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_1-same-for-this.jpg',
     badge: 'Popular',
     rating: '4.9',
     category: 'glass',
+    stock: 15,
   },
   {
     id: 'p2',
     name: '110 Sunshine Yellow Feeder',
-    price: 2650,
-    priceFormatted: 'Rs. 2,650',
+    price: 0,
+    priceFormatted: '',
     description: 'Vibrant sunshine yellow borosilicate glass feeder with anti-colic silicone grip.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497913/110_baby_feeder/feeder_4.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/Gemini_Generated_Image_vr43cdvr43cdvr43_1-remove-numitree-and-slightly-increase-the-size-of-slighlt_1.jpg',
     badge: 'New',
     rating: '5.0',
     category: 'silicone',
+    stock: 8,
   },
   {
     id: 'p3',
     name: '110 Portable Travel Feeder',
-    price: 2150,
-    priceFormatted: 'Rs. 2,150',
+    price: 0,
+    priceFormatted: '',
     description: 'Compact portable baby travel feeder bottle with secure dust-proof cap.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497912/110_baby_feeder/feeder_1%20%283%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_2-also-numitree-name-and-logoput-logo-i-gave-you-ins.jpg',
     badge: 'Essential',
     rating: '4.9',
     category: 'travel',
+    stock: 22,
   },
   {
     id: 'p4',
     name: '110 Dual Soft-Touch Feeder',
-    price: 3100,
-    priceFormatted: 'Rs. 3,100',
+    price: 0,
+    priceFormatted: '',
     description: 'Premium dual-textured silicone grip with advanced anti-colic airflow valve.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497911/110_baby_feeder/feeder_1%20%282%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_1-give-me-same-feeder-with-pink-color.jpg',
     badge: 'Best Seller',
     rating: '4.9',
     category: 'silicone',
+    stock: 12,
   },
 ];
 
@@ -131,13 +135,13 @@ export default function HomePage() {
                 {/* Oval Video Card Container */}
                 <div className="relative z-10 w-full h-full rounded-[45%_/_40%] shadow-2xl overflow-hidden border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] flex items-center justify-center p-2.5">
                   <video
-                    src="https://res.cloudinary.com/hvql2xsc/video/upload/f_auto,q_auto,w_800/v1792497925/110_baby_feeder/feeder_video.mp4"
+                    src="https://res.cloudinary.com/hvql2xsc/video/upload/v1792512111/Mother_feeding_baby_with_bottle_20261020210043.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload="metadata"
-                    poster="https://res.cloudinary.com/hvql2xsc/image/upload/f_auto,q_auto,w_800/v1792497909/110_baby_feeder/feeder_1%20%281%29.jpg"
+                    poster="https://res.cloudinary.com/hvql2xsc/image/upload/f_auto,q_auto,w_800/v1792508434/feeder_1_1-same-for-this.jpg"
                     onError={(e) => {
                       // Gracefully handle video error without unhandled event errors
                       e.currentTarget.style.display = 'none';
@@ -229,7 +233,7 @@ export default function HomePage() {
                 className="group h-full flex flex-col rounded-2xl bg-surface-container-lowest dark:bg-[#1F2937] p-5 border border-outline-variant/15 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 {/* Full Width Product Image Container */}
-                <div className="relative aspect-[4/5] w-full rounded-xl bg-surface-container-low/40 dark:bg-gray-800/60 overflow-hidden flex items-center justify-center p-1">
+                <div className="relative aspect-[4/5] w-full rounded-xl bg-surface-container-low/40 dark:bg-gray-800/60 overflow-hidden flex items-center justify-center p-4">
                   <span className="absolute top-3 left-3 z-10 font-label-sm text-xs px-3 py-1 rounded-full bg-surface-container-highest/95 dark:bg-gray-900/95 text-on-surface dark:text-gray-200 font-bold shadow-xs backdrop-blur-sm border border-outline-variant/20">
                     {prod.badge}
                   </span>
@@ -246,7 +250,7 @@ export default function HomePage() {
                     transition={{ duration: 0.3 }}
                     src={prod.image}
                     alt={prod.name}
-                    className="w-full h-full object-cover object-center rounded-lg"
+                    className="w-full h-full object-contain object-center rounded-lg"
                   />
                 </div>
 
@@ -266,10 +270,11 @@ export default function HomePage() {
                     {prod.description}
                   </p>
 
-                  {/* Price & Add to Cart Row */}
+                  {/* Stock & Add to Cart Row */}
                   <div className="mt-auto pt-5 flex items-center justify-between border-t border-outline-variant/10 dark:border-gray-800">
-                    <span className="font-price-display text-lg md:text-xl text-primary dark:text-primary-fixed font-bold tracking-tight">
-                      {prod.priceFormatted}
+                    <span className="font-label-md text-sm font-bold text-on-surface dark:text-white flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      Stock: {prod.stock} units
                     </span>
                     <button
                       onClick={() => addToCart({ id: prod.id, name: prod.name, price: prod.price, priceFormatted: prod.priceFormatted, image: prod.image, quantity: 1 })}
@@ -356,7 +361,7 @@ export default function HomePage() {
               <div className="relative w-full max-w-[440px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] p-2 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none rounded-[24px] z-10"></div>
                 <img
-                  src="https://res.cloudinary.com/hvql2xsc/image/upload/v1792497915/110_baby_feeder/Feeder_holding_son.jpg"
+                  src="https://res.cloudinary.com/hvql2xsc/image/upload/v1792510679/imgi_6_Feeder_holding_son-why-you-change-the-image-widht-and-heoght-kep-it-s.jpg"
                   alt="Parent Holding Infant with 110 Baby Feeder"
                   className="w-full h-full object-cover rounded-[24px] group-hover:scale-105 transition-transform duration-500"
                 />

@@ -13,6 +13,7 @@ export interface QuickViewProduct {
   image: string;
   rating: string;
   category?: string;
+  stock?: number;
 }
 
 interface QuickViewModalProps {
@@ -84,7 +85,10 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
                 <span className="font-bold text-on-surface dark:text-white">{product.rating || '4.9'}</span>
               </div>
               <h2 className="font-headline-lg text-2xl font-bold text-on-surface dark:text-white">{product.name}</h2>
-              <p className="font-price-display text-2xl font-bold text-primary">{product.priceFormatted}</p>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="font-label-md text-base font-bold text-on-surface dark:text-white">Stock: {product.stock || 10} units available</span>
+              </div>
               <p className="font-body-md text-on-surface-variant dark:text-gray-300 leading-relaxed">{product.description}</p>
               <div className="pt-2 border-t border-surface-container dark:border-gray-800 space-y-2">
                 <div className="flex items-center gap-2 text-on-surface-variant dark:text-gray-300 text-[13px]">

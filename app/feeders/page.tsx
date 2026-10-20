@@ -10,50 +10,54 @@ const allProducts = [
   {
     id: 'f1',
     name: '110 Classic Baby Feeder',
-    price: 2850,
-    priceFormatted: 'Rs. 2,850',
+    price: 0,
+    priceFormatted: '',
     description: 'Ergonomic borosilicate glass with soft peach silicone sleeve.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497909/110_baby_feeder/feeder_1%20%281%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_1-same-for-this.jpg',
     badge: 'Popular',
     rating: '4.9',
     category: 'glass',
     reviewsCount: 128,
+    stock: 15,
   },
   {
     id: 'f2',
     name: '110 Sunshine Yellow Feeder',
-    price: 2650,
-    priceFormatted: 'Rs. 2,650',
+    price: 0,
+    priceFormatted: '',
     description: 'Vibrant sunshine yellow borosilicate glass feeder with anti-colic silicone grip.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497913/110_baby_feeder/feeder_4.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/Gemini_Generated_Image_vr43cdvr43cdvr43_1-remove-numitree-and-slightly-increase-the-size-of-slighlt_1.jpg',
     badge: 'New',
     rating: '5.0',
     category: 'silicone',
     reviewsCount: 94,
+    stock: 8,
   },
   {
     id: 'f3',
     name: '110 Portable Travel Feeder',
-    price: 2150,
-    priceFormatted: 'Rs. 2,150',
+    price: 0,
+    priceFormatted: '',
     description: 'Compact portable baby travel feeder bottle with secure lid.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497912/110_baby_feeder/feeder_1%20%283%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_2-also-numitree-name-and-logoput-logo-i-gave-you-ins.jpg',
     badge: 'Essential',
     rating: '4.9',
     category: 'travel',
     reviewsCount: 76,
+    stock: 22,
   },
   {
     id: 'f4',
     name: '110 Dual Soft-Touch Feeder',
-    price: 3100,
-    priceFormatted: 'Rs. 3,100',
+    price: 0,
+    priceFormatted: '',
     description: 'Premium dual-textured silicone grip with anti-colic air valve.',
-    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497911/110_baby_feeder/feeder_1%20%282%29.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792508434/feeder_1_1-give-me-same-feeder-with-pink-color.jpg',
     badge: 'Best Seller',
     rating: '4.9',
     category: 'silicone',
     reviewsCount: 152,
+    stock: 12,
   },
 ];
 
@@ -229,17 +233,17 @@ export default function FeedersPage() {
               </button>
             </div>
           ) : viewMode === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {filteredProducts.map((prod, index) => (
                 <motion.div
                   key={prod.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="group flex flex-col rounded-2xl bg-surface-container-lowest dark:bg-[#1F2937] p-4 shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="group h-full flex flex-col rounded-2xl bg-surface-container-lowest dark:bg-[#1F2937] p-5 border border-outline-variant/15 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <div className="relative aspect-square w-full rounded-xl bg-surface-container-low/40 dark:bg-gray-800/60 overflow-hidden flex items-center justify-center p-1">
-                    <span className="absolute top-3 left-3 z-10 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold shadow-xs">
+                  <div className="relative aspect-[4/5] w-full rounded-xl bg-surface-container-low/40 dark:bg-gray-800/60 overflow-hidden flex items-center justify-center p-4">
+                    <span className="absolute top-3 left-3 z-10 font-label-sm text-xs px-3 py-1 rounded-full bg-surface-container-highest/95 dark:bg-gray-900/95 text-on-surface dark:text-gray-200 font-bold shadow-xs backdrop-blur-sm border border-outline-variant/20">
                       {prod.badge}
                     </span>
                     <button
@@ -255,22 +259,25 @@ export default function FeedersPage() {
                       transition={{ duration: 0.4 }}
                       src={prod.image}
                       alt={prod.name}
-                      className="w-full h-full object-cover object-center rounded-lg"
+                      className="w-full h-full object-contain object-center rounded-lg"
                     />
                   </div>
-                  <div className="flex flex-col flex-1 pt-4 pb-2">
-                    <div className="flex items-center gap-1 text-tertiary-container dark:text-tertiary text-[12px] mb-1">
-                      <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                      <span className="font-label-sm text-label-sm font-bold text-on-surface dark:text-white">{prod.rating}</span>
-                      <span className="font-body-sm text-body-sm text-on-surface-variant dark:text-gray-400">({prod.reviewsCount})</span>
+                  <div className="flex flex-col flex-1 pt-5 pb-1">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <span className="material-symbols-outlined text-amber-500 text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                      <span className="font-label-sm font-bold text-on-surface dark:text-white text-sm">{prod.rating}</span>
+                      <span className="font-body-sm text-xs text-on-surface-variant dark:text-gray-400 font-medium">(Verified)</span>
                     </div>
-                    <h3 className="font-headline-sm text-[18px] font-bold text-on-surface dark:text-white leading-snug">{prod.name}</h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant dark:text-gray-300 mt-1 line-clamp-2">{prod.description}</p>
-                    <div className="mt-auto pt-4 flex items-center justify-between">
-                      <span className="font-price-display text-price-display text-primary dark:text-primary-fixed font-bold">{prod.priceFormatted}</span>
+                    <h3 className="font-headline-sm text-[17px] font-bold text-on-surface dark:text-white leading-snug group-hover:text-primary transition-colors">{prod.name}</h3>
+                    <p className="font-body-sm text-sm text-on-surface-variant dark:text-gray-300 mt-1.5 line-clamp-2 leading-relaxed">{prod.description}</p>
+                    <div className="mt-auto pt-5 flex items-center justify-between border-t border-outline-variant/10 dark:border-gray-800">
+                      <span className="font-label-md text-sm font-bold text-on-surface dark:text-white flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Stock: {prod.stock} units
+                      </span>
                       <button
                         onClick={() => addToCart({ id: prod.id, name: prod.name, price: prod.price, priceFormatted: prod.priceFormatted, image: prod.image, quantity: 1 })}
-                        className="w-10 h-10 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:shadow-md transition-all"
+                        className="w-11 h-11 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center shadow-md hover:shadow-lg transition-all transform active:scale-95"
                         type="button"
                         aria-label="Add to cart"
                       >
@@ -306,7 +313,10 @@ export default function FeedersPage() {
                     <h3 className="font-headline-sm text-xl font-bold text-on-surface dark:text-white">{prod.name}</h3>
                     <p className="font-body-md text-on-surface-variant dark:text-gray-300">{prod.description}</p>
                     <div className="flex items-center gap-4 pt-2">
-                      <span className="font-price-display text-xl text-primary dark:text-primary-fixed font-bold">{prod.priceFormatted}</span>
+                      <span className="font-label-md text-sm font-bold text-on-surface dark:text-white flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Stock: {prod.stock} units
+                      </span>
                     </div>
                   </div>
                   <div className="flex sm:flex-col items-center gap-3 w-full sm:w-auto pt-4 sm:pt-0 border-t sm:border-t-0 border-surface-container dark:border-gray-800">

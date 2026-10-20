@@ -31,6 +31,19 @@ export default function RootLayout({
             <main className="flex-1 pt-20">{children}</main>
             <Footer />
             <CartDrawer />
+            {/* Floating WhatsApp Button */}
+            <a
+              href="https://wa.me/923205475430?text=Hello%20110%20Baby%20Feeder,%20I%20would%20like%20to%20inquire%20about%20your%20products."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
+            >
+              <span className="material-symbols-outlined text-[28px]">chat</span>
+              <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl bg-surface dark:bg-gray-800 text-on-surface dark:text-white text-xs font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-outline-variant/20">
+                Chat with Us
+              </span>
+            </a>
           </CartProvider>
         </ThemeProvider>
       </body>
