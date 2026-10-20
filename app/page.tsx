@@ -13,7 +13,7 @@ const featuredProducts = [
     price: 2850,
     priceFormatted: 'Rs. 2,850',
     description: 'Ergonomic borosilicate glass with soft peach silicone sleeve and anti-colic dual vent.',
-    image: '/images/feeder_1 (1).jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497909/110_baby_feeder/feeder_1%20%281%29.jpg',
     badge: 'Popular',
     rating: '4.9',
     category: 'glass',
@@ -24,7 +24,7 @@ const featuredProducts = [
     price: 2650,
     priceFormatted: 'Rs. 2,650',
     description: 'Vibrant sunshine yellow borosilicate glass feeder with anti-colic silicone grip.',
-    image: '/images/feeder_4.jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497913/110_baby_feeder/feeder_4.jpg',
     badge: 'New',
     rating: '5.0',
     category: 'silicone',
@@ -35,7 +35,7 @@ const featuredProducts = [
     price: 2150,
     priceFormatted: 'Rs. 2,150',
     description: 'Compact portable baby travel feeder bottle with secure dust-proof cap.',
-    image: '/images/feeder_1 (3).jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497912/110_baby_feeder/feeder_1%20%283%29.jpg',
     badge: 'Essential',
     rating: '4.9',
     category: 'travel',
@@ -46,7 +46,7 @@ const featuredProducts = [
     price: 3100,
     priceFormatted: 'Rs. 3,100',
     description: 'Premium dual-textured silicone grip with advanced anti-colic airflow valve.',
-    image: '/images/feeder_1 (2).jpg',
+    image: 'https://res.cloudinary.com/hvql2xsc/image/upload/v1792497911/110_baby_feeder/feeder_1%20%282%29.jpg',
     badge: 'Best Seller',
     rating: '4.9',
     category: 'silicone',
@@ -131,7 +131,7 @@ export default function HomePage() {
                 {/* Oval Video Card Container */}
                 <div className="relative z-10 w-full h-full rounded-[45%_/_40%] shadow-2xl overflow-hidden border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] flex items-center justify-center p-2.5">
                   <video
-                    src="/images/feeder_video.mp4"
+                    src="https://res.cloudinary.com/hvql2xsc/video/upload/v1792497925/110_baby_feeder/feeder_video.mp4"
                     autoPlay
                     loop
                     muted
@@ -355,7 +355,7 @@ export default function HomePage() {
               <div className="relative w-full max-w-[440px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] p-2 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none rounded-[24px] z-10"></div>
                 <img
-                  src="/images/Feeder_holding_son.jpg"
+                  src="https://res.cloudinary.com/hvql2xsc/image/upload/v1792497915/110_baby_feeder/Feeder_holding_son.jpg"
                   alt="Parent Holding Infant with 110 Baby Feeder"
                   className="w-full h-full object-cover rounded-[24px] group-hover:scale-105 transition-transform duration-500"
                 />
