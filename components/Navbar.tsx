@@ -49,7 +49,7 @@ export default function Navbar() {
             className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-surface-container-highest/90 to-surface-container-low/90 dark:from-gray-800 dark:to-gray-900 p-1 pr-3 sm:p-1.5 sm:pr-5 rounded-full shadow-md border border-primary/20 backdrop-blur-md"
           >
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white dark:bg-white shadow-sm border border-outline-variant/30 flex items-center justify-center overflow-hidden shrink-0 p-0.5">
-              <img src="/api/asset/logo.jpeg" alt="110 Baby Feeder Logo" className="w-full h-full object-cover rounded-full" />
+              <img src="/images/logo.jpeg" alt="110 Baby Feeder Logo" className="w-full h-full object-cover rounded-full" />
             </div>
             <span className="font-display-hero text-xs sm:text-base md:text-lg tracking-tight bg-gradient-to-r from-[#0b1c2e] via-[#115377] to-[#1c6993] dark:from-white dark:via-[#97ccf7] dark:to-[#cae6ff] bg-clip-text text-transparent font-black leading-tight whitespace-nowrap drop-shadow-[0_1px_8px_rgba(17,83,119,0.2)] dark:drop-shadow-[0_1px_10px_rgba(56,189,248,0.4)] group-hover:opacity-100 transition-opacity">
               110 Baby Feeder
