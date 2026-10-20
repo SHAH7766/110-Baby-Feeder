@@ -131,12 +131,13 @@ export default function HomePage() {
                 {/* Oval Video Card Container */}
                 <div className="relative z-10 w-full h-full rounded-[45%_/_40%] shadow-2xl overflow-hidden border-4 border-surface-container-lowest dark:border-gray-700 bg-surface-container-lowest dark:bg-[#1F2937] flex items-center justify-center p-2.5">
                   <video
-                    src="https://res.cloudinary.com/hvql2xsc/video/upload/v1792497925/110_baby_feeder/feeder_video.mp4"
+                    src="https://res.cloudinary.com/hvql2xsc/video/upload/f_auto,q_auto,w_800/v1792497925/110_baby_feeder/feeder_video.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
+                    poster="https://res.cloudinary.com/hvql2xsc/image/upload/f_auto,q_auto,w_800/v1792497909/110_baby_feeder/feeder_1%20%281%29.jpg"
                     onError={(e) => {
                       // Gracefully handle video error without unhandled event errors
                       e.currentTarget.style.display = 'none';
